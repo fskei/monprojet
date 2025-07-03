@@ -10,10 +10,29 @@
         text-align: center;
         padding-top: 100px;
       }
+      .btn-logout {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .btn-logout:hover {
+        background-color: #d32f2f;
+      }
     </style>
 </head>
 <body>
     <h1>Bienvenue dans le site d’accueil</h1>
     <p>Vous êtes connecté, {{ request.user.username }} !</p>
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn-logout">Déconnexion</button>
+    </form>
+
 </body>
 </html>
