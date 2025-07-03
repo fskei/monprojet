@@ -1,11 +1,19 @@
+<!-- templates/home.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Accueil</title>
+    <meta charset="UTF-8" />
+    <title>Accueil - EnviroSense</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 100px;
+      }
+    </style>
 </head>
 <body>
-    <h1>Bienvenue sur l’application de capteurs !</h1>
-    <p>Connectez-vous pour accéder à l’interface d’administration.</p>
+    <h1>Bienvenue dans le site d’accueil</h1>
+    <p>Vous êtes connecté, {{ request.user.username }} !</p>
 </body>
 </html>
