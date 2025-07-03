@@ -1,12 +1,7 @@
-from django.shortcuts import render
-from django.shortcuts import redirect
-
-
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
 
 def home(request):
-    return HttpResponse("Bienvenue sur la page d'accueil de l'application  !")
-
-def index(request):
-    return redirect('/admin/login/')
-
+    # tu peux ici par exemple rediriger vers login si tu veux
+    if not request.user.is_authenticated:
+        return redirect('login')
+    return render(request, 'home.html')

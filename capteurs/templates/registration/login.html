@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Connexion</title>
+</head>
+<body>
+    <h1>Bienvenue sur l’application de capteurs</h1>
+    <p>Connectez-vous pour accéder à l’interface d’administration.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="id_username">Nom d’utilisateur :</label>
+        <input type="text" name="username" id="id_username" required /><br><br>
+
+        <label for="id_password">Mot de passe :</label>
+        <input type="password" name="password" id="id_password" required /><br><br>
+
+        <button type="submit">Se connecter</button>
+    </form>
+
+    {% if form.errors %}
+        <p style="color:red;">Nom d’utilisateur ou mot de passe incorrect.</p>
+    {% endif %}
+</body>
+</html>

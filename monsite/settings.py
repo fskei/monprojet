@@ -71,8 +71,8 @@ ROOT_URLCONF = 'monsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # chemin vers ton dossier global templates
+        'APP_DIRS': True,  # active la recherche dans templates des apps aussi
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
