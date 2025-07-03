@@ -68,11 +68,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'monsite.urls'
 
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # chemin vers ton dossier global templates
-        'APP_DIRS': True,  # active la recherche dans templates des apps aussi
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # <-- ici on dit où chercher templates
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
@@ -82,6 +85,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'monsite.wsgi.application'
 
